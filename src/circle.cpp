@@ -4,7 +4,7 @@
 #include <stdexcept>
 #include "circle.h"
 
-double const Circle::PI = std::acos(-1);
+double const Circle::PI = std::atan(1.0) * 4;
 
 double Circle::checkingTheInputData(double value)
 {
@@ -53,4 +53,5 @@ void Circle::SetArea(double value)
 {
 	area = checkingTheInputData(value);
 	radius = std::sqrt(area / PI);
+	ference = radius * 2 * PI;
 }
