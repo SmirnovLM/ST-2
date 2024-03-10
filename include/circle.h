@@ -3,23 +3,20 @@
 #pragma once
 
 class Circle {
-private:
-	static const double PI;
-	double radius;
-	double ference;
+ private:
+    static const double PI;
+    double radius;
+    double ference;
+    double area;
+    static double CheckingTheInputData(double radius);
 
-	double area;
+ public:
+    explicit Circle(double raduisValue = 0);
+    double GetRadius() const;
+    double GetFerence() const;
+    double GetArea() const;
 
-	static double checkingTheInputData(double radius);
-
-	explicit Circle(double raduisValue);
-
-public:
-	double GetRadius() const;
-	double GetFerence() const;
-	double GetArea() const;
-
-	void SetRadius(double value);
-	void SetFerence(double value);
-	void SetArea(double value);
+    void SetRadius(double value);
+    void SetFerence(double value);
+    void SetArea(double value);
 };

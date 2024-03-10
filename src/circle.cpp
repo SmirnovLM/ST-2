@@ -6,52 +6,45 @@
 
 double const Circle::PI = std::atan(1.0) * 4;
 
-double Circle::checkingTheInputData(double value)
-{
-	if (value <= 0) {
-		throw std::invalid_argument("The value must be greater than zero");
-	}
-	return value;
+double Circle::CheckingTheInputData(double value) {
+    if (value < 0) {
+        throw std::invalid_argument("The value must be greater than zero");
+    }
+    return value;
 }
 
 Circle::Circle(double radiusValue) {
-	radius = checkingTheInputData(radiusValue);
-	ference = 2 * PI * radius;
-	area = PI * radius * radius;
+    radius = CheckingTheInputData(radiusValue);
+    ference = 2 * PI * radius;
+    area = PI * radius * radius;
 }
 
-double Circle::GetRadius() const
-{
-	return radius;
+double Circle::GetRadius() const {
+    return radius;
 }
 
-double Circle::GetFerence() const
-{
-	return ference;
+double Circle::GetFerence() const {
+    return ference;
 }
 
-double Circle::GetArea() const
-{
-	return area;
+double Circle::GetArea() const {
+    return area;
 }
 
-void Circle::SetRadius(double value)
-{
-	radius = checkingTheInputData(value);
-	ference = radius * 2 * PI;
-	area = radius * radius * PI;
+void Circle::SetRadius(double value) {
+    radius = CheckingTheInputData(value);
+    ference = radius * 2 * PI;
+    area = radius * radius * PI;
 }
 
-void Circle::SetFerence(double value)
-{
-	ference = checkingTheInputData(value);
-	radius = ference / (2 * PI);
-	area = radius * radius * PI;
+void Circle::SetFerence(double value) {
+    ference = CheckingTheInputData(value);
+    radius = ference / (2 * PI);
+    area = radius * radius * PI;
 }
 
-void Circle::SetArea(double value)
-{
-	area = checkingTheInputData(value);
-	radius = std::sqrt(area / PI);
-	ference = radius * 2 * PI;
+void Circle::SetArea(double value) {
+    area = CheckingTheInputData(value);
+    radius = std::sqrt(area / PI);
+    ference = radius * 2 * PI;
 }
